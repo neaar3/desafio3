@@ -36,7 +36,7 @@ function fazerRequisicaoComBody(url, metodo, conteudo, token) {
   });
 }
 const apiRodada = (rodada, setDataRodada, setRodadaAtual) => {
-  fetch(`http://localhost:8081/jogos/${rodada}`)
+  fetch(`${process.env.REACT_APP_API_URL}/jogos/${rodada}`)
     .then(res => res.json())
     .then(data => {
         setDataRodada(data.dados)
@@ -48,7 +48,7 @@ const apiRodada = (rodada, setDataRodada, setRodadaAtual) => {
 }
 
 const apiClassificacao = (setDataClassificacao) => {
-  fetch("http://localhost:8081/classificacao")
+  fetch(`${process.env.REACT_APP_API_URL}/classificacao`)
     .then(res => res.json())
     .then(data => {
       const newRow = data.dados.map((row, pos) => {
@@ -63,7 +63,7 @@ const apiClassificacao = (setDataClassificacao) => {
 }
 
 const editarJogo = (token, id, golsCasa, golsVisitante) => {
-  return fetch("http://localhost:8081/jogos", {
+  return fetch(`${process.env.REACT_APP_API_URL}/jogos`, {
     method: 'PUT',
     headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ function Login(props) {
         (
         <form onSubmit={(element) => {
           element.preventDefault();
-            fazerRequisicaoComBody("http://localhost:8081/auth", "POST", {
+            fazerRequisicaoComBody(`${process.env.REACT_APP_API_URL}/auth`, "POST", {
               email,
               senha,
             })
@@ -205,7 +205,7 @@ export default function App() {
             <img className="img-left" src={arrow_left} alt="Anterior" title="Anterior" onClick={()=> diminuirRodada()} />
             {
             rodadaAtual  === null ?
-            <div> Carregando...</div> : <span>{rodadaAtual }ª rodada </span>
+            <div> Carregando...</div> : <span>{rodadaAtual}ª rodada </span>
             }
             <img className="img-right" src={arrow_right} alt="Próxima" title="Próxima" onClick={()=> aumentarRodada()}/>
           </div>

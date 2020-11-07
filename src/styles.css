@@ -49,9 +49,6 @@ body {
 .header .out {
   margin-left: 1.25em;
 }
-.botao-deslogar {
-  margin-left: 35em;
-}
 .header button {
   background: #04375c;
   color: white;
@@ -64,7 +61,6 @@ body {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  margin-bottom: 3em;
 }
 .left {
   display: flex;
@@ -123,9 +119,6 @@ body {
   width: 20px;
   height: 20px;
 }
-.brasao-casa img {
-  margin-left: 0.5em;
-}
 .brasao {
   margin-right: 0.5em;
 }
@@ -135,11 +128,7 @@ body {
   border-radius: 50%;
   justify-self: center;
   align-self: center;
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
 }
-
 .right {
   margin: 2em 1.5em 0em 2em;
   background: white;
@@ -172,12 +161,4 @@ table {
 .new-input {
   width: 30px;
   text-align: center;
-}
-.right table tr:nth-child(-n + 5) .posicao-classificacao,
-.right table tr:nth-child(-n + 5) .time-classificacao {
-  color: green;
-}
-.right table tr:nth-last-child(-n + 4) .posicao-classificacao,
-.right table tr:nth-last-child(-n + 4) .time-classificacao {
-  color: red;
 }
